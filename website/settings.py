@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=@tyd!1jk$i-u2b09*=#a)!7ma&sh=hf-w1)_e@vf1cnmg9mkt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['cryptonewsair.herokuapp.com','127.0.0.1']
 #ALLOWED_HOSTS=[]

@@ -20,7 +20,7 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('CryptoNewsWebsite/',include('CryptoNewsWebsite.urls'))
+    path('',include('CryptoNewsWebsite.urls'))
 ]
 
 
