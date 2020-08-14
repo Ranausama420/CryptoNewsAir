@@ -238,7 +238,7 @@
                                     <img calss="latestimg img-responsive" src="{{x.thumbnail}}" alt="">
                                 </div>
                                 <div class="dont-miss-post-content">
-                                    <a href="/CryptoNewsWebsite/News/{{x.title}}" class="font-pt">{{x.title}}</a>
+                                    <a href="{% url 'CryptoNewsWebsite:catagory' 'All News' %}" class="font-pt">{{x.title}}</a>
                                     <span>{{d}}</span>
                                 </div>
                             </div>
@@ -381,7 +381,7 @@
                                 <div class="gazette-post-tag">
                                     <a href="#">{{x.primaryCategory}}</a>
                                 </div>
-                                <h3><a href="#" class="font-pt mb-2">{{x.title}}</a></h3>
+                                <h3><a href="{% url 'CryptoNewsWebsite:catagory' 'All News' %}" class="font-pt mb-2">{{x.title}}</a></h3>
                                 <span class="gazette-post-date mb-2">{{d}}</span>
 
                                 <p>{{x.description}}</p>
@@ -436,7 +436,7 @@
                                     <img calss="latestimg" src="{{x.thumbnail}}" alt="">
                                 </div>
                                 <div class="dont-miss-post-content">
-                                    <a href="#" class="font-pt">{{x.title}}</a>
+                                    <a href="{% url 'CryptoNewsWebsite:catagory' 'All News' %}" class="font-pt">{{x.title}}</a>
                                     <span>{{d}}</span>
 
                                 </div>
@@ -486,7 +486,7 @@
                                 <a href="#">bitcoin</a>
                             </div>
                             {% for b, d in bit %}
-                            <h5><a href="#" class="font-pt">{{b.title}}</a></h5>
+                            <h5><a href="{% url 'CryptoNewsWebsite:catagory' 'Bitcoin News' %}" class="font-pt">{{b.title}}</a></h5>
                             <span>{{d}}</span>
                             {% endfor %}
                         </div>
@@ -505,7 +505,7 @@
                                 <a href="#">XRP</a>
                             </div>
                             {% for x, d in xrp %}
-                            <h5><a href="#" class="font-pt">{{x.title}}</a></h5>
+                            <h5><a href="{% url 'CryptoNewsWebsite:catagory' 'Ripple News' %}" class="font-pt">{{x.title}}</a></h5>
                             <span>{{d}}</span>
                             {% endfor %}
                         </div>
@@ -523,7 +523,7 @@
                                 <a href="#">Etherum</a>
                             </div>
                             {% for e, d in eth %}
-                            <h5><a href="#" class="font-pt">{{e.title}}</a></h5>
+                            <h5><a href="{% url 'CryptoNewsWebsite:catagory' 'Ethereum News' %}" class="font-pt">{{e.title}}</a></h5>
                             <span>{{d}}</span>
                             {% endfor %}
                         </div>
@@ -548,7 +548,7 @@
                                 <div class="gazette-post-tag">
                                     <a href="#">{{x.primaryCategory}}</a>
                                 </div>
-                                <h3><a href="#" class="font-pt mb-2">{{x.title}}</a></h3>
+                                <h3><a href="{% url 'CryptoNewsWebsite:catagory' 'All News' %}" class="font-pt mb-2">{{x.title}}</a></h3>
                                 <span class="gazette-post-date mb-2">{{d}}</span>
 
                                 <p>{{x.description}}</p>
