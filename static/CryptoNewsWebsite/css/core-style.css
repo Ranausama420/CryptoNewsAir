@@ -734,7 +734,8 @@ text-decoration: none;
 font-style: normal;
 
 }
-.coinname1,.coinname3,.coinname2,.coinname4,.coinname5,.coinname6,.coinname7,.coinname8,.coinname9
+.coinname1,.coinname3,.coinname2,.coinname4,.coinname5,.coinname6,.coinname7,.coinname8,.coinname9,
+.coinname10,.coinname11,.coinname13,.coinname12,.coinname14,.coinname15,.coinname16,.coinname17,.coinname18,.coinname19
 {
 
 margin-left: 3px;
@@ -746,7 +747,8 @@ font-style: normal;
 
 }
 
-.coinname31,.coinname33,.coinname32,.coinname34,.coinname35,.coinname36,.coinname37,.coinname38,.coinname39
+.coinname31,.coinname33,.coinname32,.coinname34,.coinname35,.coinname36,.coinname37,.coinname38,.coinname39,
+.coinname310,.coinname311,.coinname313,.coinname312,.coinname314,.coinname315,.coinname316,.coinname317,.coinname318,.coinname319
 {
 
 margin-left: 3px;
@@ -790,6 +792,13 @@ padding-left: 16px;
 
 font-size: 13px;
 color: #FFFFFF;
+
+}
+.t24h1{
+
+font-size: 13px;
+color: #FFFFFF;
+display: none;
 
 }
 
@@ -837,17 +846,32 @@ height: 470px;
   .rates10,.rates11,.rates12,.rates13,.rates14,.rates15,.rates16,.rates17,
   .rates18,.rates19,.rates {
   height: 100px;
-  width: 180px;
+  width: 141px;
   display: inline-block !important;
   }
+  .coinlogos{
+ height:25px;
+}
+.coinprice{
+
+text-align: center;
+font-size: 16px;
+
+
+}
   .ratesclosuer{
 margin-left:45px;
 }
   .t24h{
 
-font-size: 9px;
-color: #FFFFFF;
+display: none !important;
    }
+.t24h1{
+
+display: inline-block !important;
+font-size: 10px;
+
+  }
    .currency{
 
   font-size:11px !important;
@@ -856,7 +880,7 @@ color: #FFFFFF;
 
 }
 .pricechange{
-font-size:10px !important;
+font-size:12px !important;
 font-wieght: 500 !important;
 
 }
@@ -864,13 +888,15 @@ font-wieght: 500 !important;
 margin-left: 1px;
 font-size:14px;
 }
-.coinname1,.coinname3,.coinname2,.coinname4,.coinname5,.coinname6,.coinname7,.coinname8,.coinname9
+.coinname1,.coinname3,.coinname2,.coinname4,.coinname5,.coinname6,.coinname7,.coinname8,.coinname9,
+.coinname10,.coinname11,.coinname13,.coinname12,.coinname14,.coinname15,.coinname16,.coinname17,.coinname18,.coinname19
 {
 margin-left: 1px;
 font-size: 14px;
 }
 
-.coinname31,.coinname33,.coinname32,.coinname34,.coinname35,.coinname36,.coinname37,.coinname38,.coinname39
+.coinname31,.coinname33,.coinname32,.coinname34,.coinname35,.coinname36,.coinname37,.coinname38,.coinname39,
+.coinname310,.coinname311,.coinname313,.coinname312,.coinname314,.coinname315,.coinname316,.coinname317,.coinname318,.coinname319
 {
 
 margin-left: 1px;
@@ -887,6 +913,16 @@ height: 500px;
 margin-left: 130px !important;
 }
 
+.dont-miss-post-content {
+margin-left: -3px !important;
+}
+.dont-miss-post-thumb{
+height: 60px !important;
+width:125px !important;
+}
+.brimg{
+width:100% !important;
+}
 }
 
 .carousel{
@@ -1029,7 +1065,7 @@ background: linear-gradient(90deg, rgba(26,1,50,0.969625350140056) 0%, rgba(41,2
 
 .single-breaking-news-widget {
     position: relative;
-
+    height: 200px;
     margin-bottom: 30px;
 }
 
@@ -1185,6 +1221,7 @@ background: #F5F5F5;
 }
 .dont-miss-post-thumb {
 height: 63px;
+width: 125px;
 margin-top: 5px;
 border: 1px solid #B8B8B8;
   border-radius: 4px;

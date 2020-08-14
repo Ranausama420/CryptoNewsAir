@@ -269,7 +269,7 @@
                                    {% for a in data %}
                                    <div  class="rates{{ forloop.counter }} text-white ">
                                        <div><img class="coinlogos" src="{{a.image}}"> <span class="coinname"> {{a.name}}</span> <span class="t24h">24h</span> </div>
-                                       <div id="price{{ forloop.counter }}" class="coinprice"  ><span id="dollor{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
+                                       <div id="price{{ forloop.counter }}" class="coinprice"  >  <span id="dollor{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
 
                                        <div id="prchnge{{ forloop.counter }}" class="pricechange" >{{a.price_change_24h}} <span id="pr{{ forloop.counter }}">{{a.price_change_percentage_24h|floatformat:"-3"}}</span><span>%</span></div>
                                    </div>
@@ -284,7 +284,7 @@
                                    {% for a in data1 %}
                                    <div  class="rates{{ forloop.counter }} text-white ">
                                        <div><img class="coinlogos" src="{{a.image}}"> <span class="coinname{{ forloop.counter }}"> {{a.name}}</span> <span class="t24h">24h</span> </div>
-                                       <div id="price2{{ forloop.counter }}" class="coinprice"  ><span id="dollor2{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
+                                       <div id="price2{{ forloop.counter }}" class="coinprice"  ><span id="dollor2{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}} </div>
 
                                        <div id="prchnge2{{ forloop.counter }}" class="pricechange" >{{a.price_change_24h}} <span id="pr2{{ forloop.counter }}">{{a.price_change_percentage_24h|floatformat:"-3"}}</span><span>%</span></div>
                                    </div>
