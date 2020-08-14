@@ -1,0 +1,522 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Crypto News Air</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'CryptoNewsWebsite/img/core-img/favicon.ico' %}">
+
+     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'CryptoNewsWebsite/css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'CryptoNewsWebsite/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Responsive CSS -->
+    <link href="{% static 'CryptoNewsWebsite/css/responsive.css' %}" rel="stylesheet">
+
+    <script>
+
+
+        window.onload = function(){
+        var i;
+        var res;
+        text="pr"
+        text1="price"
+        text2="dollor"
+        text3="prchnge"
+        var res2c;
+        text2c="pr2"
+        text12c="price2"
+        text22c="dollor2"
+        text32c="prchnge2"
+
+        for (i=1; i<=9; i++){
+
+        var res=text.concat(i);
+        var res1=text1.concat(i);
+        var res2=text2.concat(i);
+        var res3=text3.concat(i);
+
+        var res2c=text2c.concat(i);
+        var res12c=text12c.concat(i);
+        var res22c=text22c.concat(i);
+        var res32c=text32c.concat(i);
+
+        var x = document.getElementById(res.toString()).textContent;
+        if (x < 0){
+        document.getElementById(res1.toString()).style.color=("red");
+        document.getElementById(res2.toString()).style.color=("red");
+        document.getElementById(res3.toString()).style.color=("red");
+
+        }
+        var x2 = document.getElementById(res2c.toString()).textContent;
+        if (x2 < 0){
+        document.getElementById(res12c.toString()).style.color=("red");
+        document.getElementById(res22c.toString()).style.color=("red");
+        document.getElementById(res32c.toString()).style.color=("red");
+
+        }
+
+
+
+        }
+
+
+
+
+
+        }
+    </script>
+
+</head>
+
+<body>
+     <!-- Header Area Start -->
+    <header class="header-area">
+
+
+        <!-- Middle Header Area -->
+
+          <div class="middle-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center" >
+                    <!-- Logo Area -->
+                    <div class="col-sm-4" >
+                        <div class="logo-area">
+                            <a href="{% url 'CryptoNewsWebsite:index' %}"><img class="img" src="{% static 'CryptoNewsWebsite/img/core-img/cryptologo.png' %}" alt="logo"></a>
+                        </div>
+                    </div>
+                    <!-- Header Advert Area -->
+                    <div class="col-sm-8">
+                        <div class="header-advert-area">
+                            <a href="#"><img src="{% static 'CryptoNewsWebsite/img/bg-img/top-advert.png' %}" alt="header-add"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Bottom Header Area -->
+        <div class="container">
+          <div class="bottom-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="main-menu">
+
+                            <nav class="navbar navbar-expand-lg navbar-static-top">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                                <div class="collapse navbar-collapse" id="gazetteMenu">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link item" href="{% url 'CryptoNewsWebsite:index' %}">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'CryptoNewsWebsite:catagory' 'latest' %}">latest</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >News</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'All News' %}">All News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Bitcoin News' %}">Bitcoin News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Ripple News' %}">Ripple News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Ethereum News' %}">Ethereum News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Blockchain News' %}">BlockChain News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Mining News' %}">Mining News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Analysis News' %}">Analysis News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Exchanges News' %}">Exchanges News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'General News' %}">General News</a>
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" >Videos</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Cryptocurrency' %}">Cryptocurrency</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Bitcoin' %}">Bitcoin</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Blockchain' %}">BlockChain</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Crypto Mining' %}">Mining</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Crypto Exchanges' %}">Exchanges</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Crypto Trading' %}">Trading</a>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link"  href="{% url 'CryptoNewsWebsite:marketcap' 1 %}">Market Cap</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'CryptoNewsWebsite:exchange' 1 %}">Exchanges</a>
+                                        </li>
+
+
+                                    </ul>
+                                    <!-- Search Form -->
+                                    <div class="header-search-form mr-auto">
+                                        <form action="#">
+                                            <input type="search" placeholder="Input your keyword then press enter..." id="search" name="search">
+                                            <input class="d-none" type="submit" value="submit">
+                                        </form>
+                                    </div>
+                                    <!-- Search btn -->
+                                    <div id="searchbtn">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+    <!-- stock price start -->
+     <div class="container h-100" >
+         <div class="row h-100">
+             <div class="col-12">
+    <div id="accordion" class="accordion" >
+        <div class="card mb-0" >
+            <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+                {% for a in data %}
+                 <div  class="rates{{ forloop.counter }} text-white ">
+                                       <div><img class="coinlogos" src="{{a.image}}"> <span class="coinname"> {{a.name}}</span> <span class="t24h">24h</span> </div>
+                                       <div id="price{{ forloop.counter }}" class="coinprice"  ><span id="dollor{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
+
+                                       <div id="prchnge{{ forloop.counter }}" class="pricechange" >{{a.price_change_24h}} <span id="pr{{ forloop.counter }}">{{a.price_change_percentage_24h|floatformat:"-3"}}</span><span>%</span></div>
+                                   </div>
+                {% endfor %}
+            </div>
+            <div id="collapseOne" class="card-body collapse" data-parent="#accordion" >
+                  {% for a in data1 %}
+                                   <div  class="rates{{ forloop.counter }} text-white ">
+                                       <div><img class="coinlogos" src="{{a.image}}"> <span class="coinname{{ forloop.counter }}"> {{a.name}}</span> <span class="t24h">24h</span> </div>
+                                       <div id="price2{{ forloop.counter }}" class="coinprice"  ><span id="dollor2{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
+
+                                       <div id="prchnge2{{ forloop.counter }}" class="pricechange" >{{a.price_change_24h}} <span id="pr2{{ forloop.counter }}">{{a.price_change_percentage_24h|floatformat:"-3"}}</span><span>%</span></div>
+                                   </div>
+                {% endfor %}
+            </div>
+
+
+            </div>
+        </div>
+             </div>
+         </div>
+    </div>
+     <!-- stock price End -->
+
+    <!-- Main Content Area Start -->
+    <section class="main-content-wrapper section_padding_30">
+        <div class="container">
+            <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb arr-right ">
+                        <li class="breadcrumb-item "><a href="#" >Home</a></li>
+                        <li class="breadcrumb-item "><a href="#" >News</a></li>
+                        <li class="breadcrumb-item "><a href="#" >{{latest}}</a></li>
+                    </ol>
+                </nav>
+            <div class="row">
+
+                <div class="col-12 col-lg-9">
+                    <!-- Gazette Welcome Post -->
+                    <div class="gazette-todays-post section_padding_50">
+                        <div class="gazette-heading">
+                            <h4>{{latest}}</h4>
+                        </div>
+                        <!-- Single Today Post -->
+                        {% for x , d in tdnews %}
+                        <div class="gazette-single-todays-post d-md-flex align-items-start mb-50">
+                            <div class="todays-post-thumb">
+                                <img src="{{x.originalImageUrl}}" alt="">
+                            </div>
+                            <div class="todays-post-content">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">{{x.primaryCategory}}</a>
+                                </div>
+                                <h3><a href="#" class="font-pt mb-2">{{x.title}}</a></h3>
+                                <span class="gazette-post-date mb-2">{{d}}</span>
+
+                                <p>{{x.description}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Single Today Post -->
+                        {% if latest|stringformat:"s" == "latest" %}
+                        <div class="container col-12 col-lg-9 pg">
+                            <a class="pgart1" href="{% url 'CryptoNewsWebsite:catagory' 'All News' %}">Load more</a>
+                        </div>
+
+                        {% else %}
+                        <div class="container col-12 col-lg-9 pg">
+
+                            <div class="pagination col-12 col-6">
+                            {% if page_obj.has_previous %}
+                            <a class="pagination-action" href="?page=1"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                            <a class="pagination-action" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                            {% endif %}
+                            {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                            <span class="pagination-number pagination-current">{{ num }}</span>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <a class="pagination-action" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a class="pagination-action" href="?page={{ page_obj.paginator.num_pages }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                            {% endif %}
+                                <p class="pgart">of {{page_obj.paginator.count}} Articles</p>
+
+
+                        </div>
+
+
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-3 col-md-6">
+                    <div class="sidebar-area">
+                        <!-- Don't Miss Widget -->
+                        <div class="donnot-miss-widget">
+                            <div class="widget-title">
+                                <h5>Most Popular</h5>
+                            </div>
+
+                            <div class="scrollbar" id="style-2">
+                            <!-- Single Don't Miss Post -->
+                                {% for x, d in news1zip %}
+                            <div class="single-dont-miss-post d-flex mb-30">
+                                <div class="dont-miss-post-thumb" >
+                                    <img calss="latestimg" src="{{x.thumbnail}}" alt="">
+                                </div>
+                                <div class="dont-miss-post-content">
+                                    <a href="#" class="font-pt">{{x.title}}</a>
+                                    <span>{{d}}</span>
+
+                                </div>
+                            </div>
+                             <!-- Single Don't Miss Post -->
+                                 {% endfor %}
+                            </div>
+
+                        </div>
+                        <!-- Advert Widget -->
+                        <div class="advert-widget">
+
+                            <div class="advert-thumb mb-30">
+                                <a href="#"><img src="{% static 'CryptoNewsWebsite/img/bg-img/add.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <!-- Subscribe Widget -->
+                        <div class="subscribe-widget">
+                            <div class="widget-title">
+                                <h5>subscribe</h5>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="email" name="email" id="subs_email" placeholder="Your Email">
+                                    <button type="submit">subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Area End -->
+
+
+
+
+
+
+    </section>
+    <!-- Catagory Posts Area End -->
+<div class="container">
+    <!-- Footer Area Start -->
+    <!-- Footer -->
+<footer class="page-footer footer font-small unique-color-dark">
+
+  <div class="socialfootericon">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0 footertitle">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fa fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fa fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fa fa-google-plus white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fa fa-linkedin white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fa fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container  text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <a href="index.html"><img class="footerimg" src="{% static 'CryptoNewsWebsite/img/core-img/cryptologowhite.png' %}" alt="logo"></a>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>All the news articles are powered by <a href="https://cryptocontrol.io/en/developers/apis">Cryptocontrol.io</a> Api.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase footertitle font-weight-bold">News</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Home</a>
+        </p>
+        <p>
+          <a href="#!">latest News</a>
+        </p>
+        <p>
+          <a href="#!">Coins News</a>
+        </p>
+        <p>
+          <a href="#!">Most Popular News</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase footertitle font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Market Cap</a>
+        </p>
+        <p>
+          <a href="#!">Exchanges</a>
+        </p>
+        <p>
+          <a href="#!">Coins Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase footertitle font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+        <p>
+          <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p>
+          <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+    <div class="socialfootericon">
+  <div class="footer-copyright footertitle text-center py-3">© 2020 Copyright:
+    <a href=""> CryptoNewsAir.com</a>
+  </div>
+        </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+    <!-- Footer Area End -->
+    </div>
+
+   <!-- Popper js -->
+    <script src="{% static 'CryptoNewsWebsite/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'CryptoNewsWebsite/js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'CryptoNewsWebsite/js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'CryptoNewsWebsite/js/active.js' %}"></script>
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{% static 'CryptoNewsWebsite/js/jquery/jquery-2.2.4.min.js' %}"></script>
+
+</body>
+
+</html>

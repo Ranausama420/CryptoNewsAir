@@ -1,0 +1,731 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Crypto News Air</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'CryptoNewsWebsite/img/core-img/favicon.ico' %}">
+
+     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'CryptoNewsWebsite/css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'CryptoNewsWebsite/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Responsive CSS -->
+    <link href="{% static 'CryptoNewsWebsite/css/responsive.css' %}" rel="stylesheet">
+
+    <script>
+
+
+        window.onload = function(){
+        var i;
+        var res;
+        text="pr"
+        text1="price"
+        text2="dollor"
+        text3="prchnge"
+
+        var res2c;
+        text2c="pr2"
+        text12c="price2"
+        text22c="dollor2"
+        text32c="prchnge2"
+
+        var res3c;
+        text3c="pr3"
+        text13c="price3"
+        text23c="dollor3"
+        text33c="prchnge3"
+
+        for (i=1; i<=9; i++){
+
+        var res=text.concat(i);
+        var res1=text1.concat(i);
+        var res2=text2.concat(i);
+        var res3=text3.concat(i);
+
+        var res2c=text2c.concat(i);
+        var res12c=text12c.concat(i);
+        var res22c=text22c.concat(i);
+        var res32c=text32c.concat(i);
+
+        var res3c=text3c.concat(i);
+        var res13c=text13c.concat(i);
+        var res23c=text23c.concat(i);
+        var res33c=text33c.concat(i);
+
+        var x = document.getElementById(res.toString()).textContent;
+        if (x < 0){
+        document.getElementById(res1.toString()).style.color=("red");
+        document.getElementById(res2.toString()).style.color=("red");
+        document.getElementById(res3.toString()).style.color=("red");
+
+        }
+        var x2 = document.getElementById(res2c.toString()).textContent;
+        if (x2 < 0){
+        document.getElementById(res12c.toString()).style.color=("red");
+        document.getElementById(res22c.toString()).style.color=("red");
+        document.getElementById(res32c.toString()).style.color=("red");
+
+        }
+        var x2 = document.getElementById(res3c.toString()).textContent;
+        if (x2 < 0){
+        document.getElementById(res13c.toString()).style.color=("red");
+        document.getElementById(res23c.toString()).style.color=("red");
+        document.getElementById(res33c.toString()).style.color=("red");
+
+        }
+
+
+
+        }
+
+
+
+        }
+    </script>
+
+</head>
+
+<body >
+    <!-- Header Area Start -->
+    <header class="header-area">
+
+
+        <!-- Middle Header Area -->
+
+          <div class="middle-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center" >
+                    <!-- Logo Area -->
+                    <div class="col-sm-4" >
+                        <div class="logo-area">
+                            <a href="{% url 'CryptoNewsWebsite:index' %}"><img class="img" src="{% static 'CryptoNewsWebsite/img/core-img/cryptologo.png' %}" alt="logo"></a>
+                        </div>
+                    </div>
+                    <!-- Header Advert Area -->
+                    <div class="col-sm-8">
+                        <div class="header-advert-area">
+                            <a href="#"><img src="{% static 'CryptoNewsWebsite/img/bg-img/top-advert.png' %}" alt="header-add"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Bottom Header Area -->
+        <div class="container">
+          <div class="bottom-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="main-menu">
+
+                            <nav class="navbar navbar-expand-lg navbar-static-top">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#gazetteMenu" aria-controls="gazetteMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                                <div class="collapse navbar-collapse" id="gazetteMenu">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link item" href="{% url 'CryptoNewsWebsite:index' %}">Home <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'CryptoNewsWebsite:catagory' 'latest' %}">latest</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >News</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'All News' %}">All News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Bitcoin News' %}">Bitcoin News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Ripple News' %}">Ripple News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Ethereum News' %}">Ethereum News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Blockchain News' %}">BlockChain News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Mining News' %}">Mining News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Analysis News' %}">Analysis News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'Exchanges News' %}">Exchanges News</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:catagory' 'General News' %}">General News</a>
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" >Videos</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Cryptocurrency' %}">Cryptocurrency</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Bitcoin' %}">Bitcoin</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Blockchain' %}">BlockChain</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Crypto Mining' %}">Mining</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Crypto Exchanges' %}">Exchanges</a>
+                                                <a class="dropdown-item" href="{% url 'CryptoNewsWebsite:videos' 'Crypto Trading' %}">Trading</a>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link"  href="{% url 'CryptoNewsWebsite:marketcap' 1 %}">Market Cap</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'CryptoNewsWebsite:exchange' 1 %}">Exchanges</a>
+                                        </li>
+
+
+                                    </ul>
+                                    <!-- Search Form -->
+                                    <div class="header-search-form mr-auto">
+                                        <form action="#">
+                                            <input type="search" placeholder="Input your keyword then press enter..." id="search" name="search">
+                                            <input class="d-none" type="submit" value="submit">
+                                        </form>
+                                    </div>
+                                    <!-- Search btn -->
+                                    <div id="searchbtn">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+   <!-- <div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div> -->
+    <!-- Welcome Blog Slide Area Start -->
+<div class="container Welcome">
+           <div class="row no-gutters">
+               <div class="col-sm-4 " >
+                   <div class="container-fluid lt img-responsive" >
+                   <div class="row no-gutters">
+
+                        <div class="donnot-miss-widget" >
+                            <div class="widget-title">
+                                <h5>Latest</h5>
+                            </div>
+
+                            <div class="scrollbar" id="style-1">
+                            <!-- Single Don't Miss Post -->
+                                {% for x , d in zipdata %}
+                            <div class="single-dont-miss-post d-flex mb-30">
+                                <div class="dont-miss-post-thumb" >
+                                    <img calss="latestimg img-responsive" src="{{x.thumbnail}}" alt="">
+                                </div>
+                                <div class="dont-miss-post-content">
+                                    <a href="/CryptoNewsWebsite/News/{{x.title}}" class="font-pt">{{x.title}}</a>
+                                    <span>{{d}}</span>
+                                </div>
+                            </div>
+                             <!-- Single Don't Miss Post -->
+                                 {% endfor %}
+                            </div>
+                        </div>
+
+                   </div>
+               </div>
+
+
+               </div>
+               <div class="col-sm-8 rates-container" >
+
+                   <div id="demo" class="carousel slide " data-interval="false">
+                       <!-- Indicators -->
+                       <ul class="carousel-indicators">
+                           <li data-target="#demo" data-slide-to="0" class="active"></li>
+                           <li data-target="#demo" data-slide-to="1"></li>
+                           <li data-target="#demo" data-slide-to="2"></li>
+                       </ul>
+                       <!-- The slideshow -->
+                       <div class="carousel-inner">
+                           <div class="carousel-item active">
+                               <div class="container row ">
+                                   <div class="ratesclosuer" >
+                                   {% for a in data %}
+                                   <div  class="rates{{ forloop.counter }} text-white ">
+                                       <div><img class="coinlogos" src="{{a.image}}"> <span class="coinname"> {{a.name}}</span> <span class="t24h">24h</span> </div>
+                                       <div id="price{{ forloop.counter }}" class="coinprice"  ><span id="dollor{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
+
+                                       <div id="prchnge{{ forloop.counter }}" class="pricechange" >{{a.price_change_24h}} <span id="pr{{ forloop.counter }}">{{a.price_change_percentage_24h|floatformat:"-3"}}</span><span>%</span></div>
+                                   </div>
+                                   {% endfor %}
+                                       </div>
+
+                               </div>
+                           </div>
+                           <div class="carousel-item">
+                               <div class="container row ">
+                                   <div class="ratesclosuer" >
+                                   {% for a in data1 %}
+                                   <div  class="rates{{ forloop.counter }} text-white ">
+                                       <div><img class="coinlogos" src="{{a.image}}"> <span class="coinname{{ forloop.counter }}"> {{a.name}}</span> <span class="t24h">24h</span> </div>
+                                       <div id="price2{{ forloop.counter }}" class="coinprice"  ><span id="dollor2{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
+
+                                       <div id="prchnge2{{ forloop.counter }}" class="pricechange" >{{a.price_change_24h}} <span id="pr2{{ forloop.counter }}">{{a.price_change_percentage_24h|floatformat:"-3"}}</span><span>%</span></div>
+                                   </div>
+                                   {% endfor %}
+                                       </div>
+
+                               </div>
+                           </div>
+                           <div class="carousel-item">
+                               <div class="container row ">
+                                   <div class="ratesclosuer" >
+                                   {% for a in data2 %}
+                                   <div  class="rates{{ forloop.counter }} text-white ">
+                                       <div><img class="coinlogos" src="{{a.image}}"> <span class="coinname3{{ forloop.counter }}"> {{a.name}}</span> <span class="t24h">24h</span> </div>
+                                       <div id="price3{{ forloop.counter }}" class="coinprice"  ><span id="dollor3{{ forloop.counter }}"  class="currency" > $</span>{{a.current_price}}</div>
+
+                                       <div id="prchnge3{{ forloop.counter }}" class="pricechange" >{{a.price_change_24h}} <span id="pr3{{ forloop.counter }}">{{a.price_change_percentage_24h|floatformat:"-3"}}</span><span>%</span></div>
+                                   </div>
+                                   {% endfor %}
+                                       </div>
+
+                               </div>
+                           </div>
+                       </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
+
+
+
+
+           </div>
+</div>
+
+
+
+
+
+
+
+    <!-- Main Content Area Start -->
+    <section class="main-content-wrapper section_padding_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-9">
+                    <!-- Gazette Welcome Post -->
+                    <div class="gazette-welcome-post">
+                        <!-- Post Tag -->
+                        <div class="gazette-post-tag">
+                            <a href="#">{{news.0.primaryCategory}}</a>
+                        </div>
+                        <h2 class="font-pt">{{news.0.title}}</h2>
+                        <p class="gazette-post-date">{{frmtdate.0}}</p>
+                        <!-- Post Thumbnail -->
+                        <div class="blog-post-thumbnail my-5">
+                            <img src="{{news.0.originalImageUrl}}" alt="post-thumb">
+                        </div>
+                        <!-- Post Excerpt -->
+                        <p>{{news.0.description}}</p>
+                        <!-- Reading More -->
+                        <div class="post-continue-reading-share d-sm-flex align-items-center justify-content-between mt-30">
+                            <div class="post-continue-btn">
+                                <a href="#" class="font-pt">Continue Reading <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="post-share-btn-group">
+                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gazette-todays-post section_padding_100_50">
+                        <div class="gazette-heading">
+                            <h4>today’s most popular</h4>
+                        </div>
+                        <!-- Single Today Post -->
+                        {% for x , d in tdnews %}
+                        <div class="gazette-single-todays-post d-md-flex align-items-start mb-50">
+                            <div class="todays-post-thumb">
+                                <img src="{{x.originalImageUrl}}" alt="">
+                            </div>
+                            <div class="todays-post-content">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">{{x.primaryCategory}}</a>
+                                </div>
+                                <h3><a href="#" class="font-pt mb-2">{{x.title}}</a></h3>
+                                <span class="gazette-post-date mb-2">{{d}}</span>
+
+                                <p>{{x.description}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Single Today Post -->
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-3 col-md-6">
+                    <div class="sidebar-area">
+                        <!-- Breaking News Widget -->
+                        <div class="breaking-news-widget">
+                            <div class="widget-title">
+                                <h5>breaking news</h5>
+                            </div>
+                            <!-- Single Breaking News Widget -->
+                            <div class="single-breaking-news-widget">
+                                <img class="brimg" src="{{news.1.originalImageUrl}}" alt="">
+                                <div class="breakingnews-title">
+                                    <p>breaking news</p>
+                                </div>
+                                <div class="breaking-news-heading gradient-background-overlay">
+                                    <h5 class="font-pt text-white">{{news.1.title}}</h5>
+                                </div>
+                            </div>
+                            <!-- Single Breaking News Widget -->
+                            <div class="single-breaking-news-widget">
+                                <img class="brimg" src="{{news.2.originalImageUrl}}" alt="">
+                                <div class="breakingnews-title">
+                                    <p>breaking news</p>
+                                </div>
+                                <div class="breaking-news-heading gradient-background-overlay">
+                                    <h5 class="font-pt text-white">{{news.2.title}}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Don't Miss Widget -->
+                        <div class="donnot-miss-widget">
+                            <div class="widget-title">
+                                <h5>Don't miss</h5>
+                            </div>
+
+                            <div class="scrollbar" id="style-2">
+                            <!-- Single Don't Miss Post -->
+                                {% for x, d in news1zip %}
+                            <div class="single-dont-miss-post d-flex mb-30">
+                                <div class="dont-miss-post-thumb" >
+                                    <img calss="latestimg" src="{{x.thumbnail}}" alt="">
+                                </div>
+                                <div class="dont-miss-post-content">
+                                    <a href="#" class="font-pt">{{x.title}}</a>
+                                    <span>{{d}}</span>
+
+                                </div>
+                            </div>
+                             <!-- Single Don't Miss Post -->
+                                 {% endfor %}
+                            </div>
+
+                        </div>
+                        <!-- Advert Widget -->
+                        <div class="advert-widget">
+
+                            <div class="advert-thumb mb-30">
+                                <a href="#"><img src="{% static 'CryptoNewsWebsite/img/bg-img/add.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <!-- Subscribe Widget -->
+                        <div class="subscribe-widget">
+                            <div class="widget-title">
+                                <h5>subscribe</h5>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="email" name="email" id="subs_email" placeholder="Your Email">
+                                    <button type="submit">subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Area End -->
+
+        <!-- Catagory Posts Area Start -->
+        <div class="gazette-catagory-posts-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <!-- Single Catagory Post -->
+                        <div class="gazette-single-catagory-post">
+                            <div class="single-catagory-post-thumb mb-15">
+                                <img src="img/blog-img/12.jpg" alt="">
+                            </div>
+                            <!-- Post Tag -->
+                            <div class="gazette-post-tag">
+                                <a href="#">bitcoin</a>
+                            </div>
+                            {% for b, d in bit %}
+                            <h5><a href="#" class="font-pt">{{b.title}}</a></h5>
+                            <span>{{d}}</span>
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <!-- Single Catagory Post -->
+                        <div class="gazette-single-catagory-post">
+                            <div class="single-catagory-post-thumb mb-15">
+                                <img src="img/blog-img/13.jpg" alt="">
+                            </div>
+                            <!-- Post Tag -->
+                            <div class="gazette-post-tag">
+                                <a href="#">XRP</a>
+                            </div>
+                            {% for x, d in xrp %}
+                            <h5><a href="#" class="font-pt">{{x.title}}</a></h5>
+                            <span>{{d}}</span>
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <!-- Single Catagory Post -->
+                        <div class="gazette-single-catagory-post">
+                            <div class="single-catagory-post-thumb mb-15">
+                                <img src="img/blog-img/13.jpg" alt="">
+                            </div>
+                            <!-- Post Tag -->
+                            <div class="gazette-post-tag">
+                                <a href="#">Etherum</a>
+                            </div>
+                            {% for e, d in eth %}
+                            <h5><a href="#" class="font-pt">{{e.title}}</a></h5>
+                            <span>{{d}}</span>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gazette-todays-post section_padding_100_50">
+                        <div class="gazette-heading">
+                            <h4>today’s most popular</h4>
+                        </div>
+                        <!-- Single Today Post -->
+                        {% for x , d in tdnews1 %}
+                        <div class="gazette-single-todays-post d-md-flex align-items-start mb-50">
+                            <div class="todays-post-thumb">
+                                <img src="{{x.originalImageUrl}}" alt="">
+                            </div>
+                            <div class="todays-post-content">
+                                <!-- Post Tag -->
+                                <div class="gazette-post-tag">
+                                    <a href="#">{{x.primaryCategory}}</a>
+                                </div>
+                                <h3><a href="#" class="font-pt mb-2">{{x.title}}</a></h3>
+                                <span class="gazette-post-date mb-2">{{d}}</span>
+
+                                <p>{{x.description}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Single Today Post -->
+
+                    </div>
+
+
+    </section>
+    <!-- Catagory Posts Area End -->
+
+
+
+
+    <!-- Footer Area Start -->
+    <!-- Footer -->
+<footer class="page-footer footer font-small unique-color-dark">
+
+  <div class="socialfootericon">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0 footertitle">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fa fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fa fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fa fa-google-plus white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fa fa-linkedin white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fa fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container  text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <a href="index.html"><img class="footerimg" src="{% static 'CryptoNewsWebsite/img/core-img/cryptologowhite.png' %}" alt="logo"></a>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>All the news articles are powered by <a href="https://cryptocontrol.io/en/developers/apis">Cryptocontrol.io</a> Api.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase footertitle font-weight-bold">News</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Home</a>
+        </p>
+        <p>
+          <a href="#!">latest News</a>
+        </p>
+        <p>
+          <a href="#!">Coins News</a>
+        </p>
+        <p>
+          <a href="#!">Most Popular News</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase footertitle font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Market Cap</a>
+        </p>
+        <p>
+          <a href="#!">Exchanges</a>
+        </p>
+        <p>
+          <a href="#!">Coins Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase footertitle font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+        <p>
+          <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p>
+          <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+    <div class="socialfootericon">
+  <div class="footer-copyright footertitle text-center py-3">© 2020 Copyright:
+    <a href=""> CryptoNewsAir.com</a>
+  </div>
+        </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+    <!-- Footer Area End -->
+
+
+    <!-- Popper js -->
+    <script src="{% static 'CryptoNewsWebsite/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'CryptoNewsWebsite/js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'CryptoNewsWebsite/js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'CryptoNewsWebsite/js/active.js' %}"></script>
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{% static 'CryptoNewsWebsite/js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</body>
+
+</html>
