@@ -832,7 +832,7 @@ margin-top:40px;
 height: 470px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   .rates1,.rates2,.rates3,.rates4,.rates5,.rates6,.rates7,.rates8,.rates9,
   .rates10,.rates11,.rates12,.rates13,.rates14,.rates15,.rates16,.rates17,
   .rates18,.rates19,.rates {
